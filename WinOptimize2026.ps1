@@ -8,33 +8,38 @@ Add-Type -AssemblyName PresentationFramework
 
 [xml]$xaml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        Title="ULTIMATE WINDOWS GOD MODE - 2026" Height="880" Width="1250" 
-        Background="#0A0A0A" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="ULTIMATE WINDOWS GOD MODE - 2026" Height="900" Width="1300" 
+        Background="#080808" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
             <TextBlock Text="ULTIMATE WINDOWS GOD MODE" FontSize="32" Foreground="#00ffcc" HorizontalAlignment="Center" FontWeight="Bold"/>
-            <TextBlock Text="LIVE CONSOLE MODE ACTIVE ✅" FontSize="12" Foreground="#4CAF50" HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <UniformGrid Grid.Row="1" Columns="5">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+            <TextBlock Text="ENGINE:" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold"/>
+            <Button Name="btnToggleEngine" Content="SWITCH TO CHOCOLATEY 🍫" Width="220" Padding="8" Background="#005a9e" Foreground="White" FontWeight="Bold"/>
+        </StackPanel>
+
+        <UniformGrid Grid.Row="2" Columns="5">
             <StackPanel Margin="8">
-                <TextBlock Text="🛠️ SYSTEM &amp; NET" Foreground="Yellow" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock Text="🛠️ SYSTEM" Foreground="Yellow" FontWeight="Bold" Margin="0,0,0,10"/>
                 <Button Name="btn1" Content="Massgrave" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btn2" Content="Chris Titus Utility" Margin="0,2" Padding="4" Background="#005a9e" Foreground="White" FontWeight="Bold"/>
+                <Button Name="btn2" Content="Chris Titus" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
                 <Button Name="btn4" Content="SFC + DISM" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btnNetReset" Content="🌐 RESET NETWORK" Margin="0,5,0,2" Padding="6" Background="#8B0000" Foreground="White" FontWeight="Bold"/>
+                <Button Name="btnNetReset" Content="NET RESET" Margin="0,5,0,2" Padding="6" Background="#8B0000" Foreground="White"/>
             </StackPanel>
 
             <StackPanel Margin="8">
-                <TextBlock Text="⚡ UTILITIES" Foreground="#00CCFF" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock Text="⚡ UTILS" Foreground="#00CCFF" FontWeight="Bold" Margin="0,0,0,10"/>
                 <Button Name="btnTwinkle" Content="Twinkle Tray" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btnNerdFont" Content="Install Nerd Font" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
+                <Button Name="btnNerdFont" Content="Nerd Font" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
                 <Button Name="btn9" Content="Everything" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
                 <Button Name="btn13" Content="AutoHotkey v2" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
             </StackPanel>
@@ -47,22 +52,21 @@ Add-Type -AssemblyName PresentationFramework
             </StackPanel>
 
             <StackPanel Margin="8">
-                <TextBlock Text="🏠 HOMELAB" Foreground="#FF00FF" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock Text="🏠 HOME" Foreground="#FF00FF" FontWeight="Bold" Margin="0,0,0,10"/>
                 <Button Name="btnTailscale" Content="Tailscale" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
                 <Button Name="btnRustDesk" Content="RustDesk" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btnPingVM" Content="Ping VMLinux" Margin="0,2" Padding="4" Background="#333" Foreground="#FF00FF"/>
+                <Button Name="btnPingVM" Content="Ping VM" Margin="0,2" Padding="4" Background="#333" Foreground="#FF00FF"/>
             </StackPanel>
 
             <StackPanel Margin="8">
-                <TextBlock Text="🎮 HARDWARE" Foreground="Orange" FontWeight="Bold" Margin="0,0,0,10"/>
-                <Button Name="btn21" Content="FanControl" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btn23" Content="MSI Afterburner" Margin="0,2" Padding="4" Background="#252525" Foreground="White"/>
-                <Button Name="btn25" Content="UPGRADE ALL" Margin="0,15,0,0" Padding="10" Background="#005a9e" Foreground="White" FontWeight="Bold"/>
+                <TextBlock Text="🚀 ACTIONS" Foreground="Orange" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Button Name="btn25" Content="UPGRADE ALL" Margin="0,2" Padding="10" Background="#005a9e" Foreground="White" FontWeight="Bold"/>
+                <Button Name="btnSearch" Content="🔍 SEARCH PACKS" Margin="0,5,0,2" Padding="6" Background="#252525" Foreground="White"/>
             </StackPanel>
         </UniformGrid>
 
-        <StatusBar Grid.Row="2" Background="#1e1e1e" Foreground="White" Height="30">
-            <TextBlock Name="txtStatus" Text="Ready, Sayan." VerticalAlignment="Center" Margin="10,0"/>
+        <StatusBar Grid.Row="3" Background="#1e1e1e" Foreground="White" Height="30">
+            <TextBlock Name="txtStatus" Text="Engine: WINGET | Ready, Sayan." VerticalAlignment="Center" Margin="10,0"/>
         </StatusBar>
     </Grid>
 </Window>
@@ -73,24 +77,49 @@ $Form = [Windows.Markup.XamlReader]::Load($reader)
 $btn = @{}; $xaml.SelectNodes("//*[@Name]") | ForEach-Object { $btn[$_.Name] = $Form.FindName($_.Name) }
 $txtStatus = $Form.FindName("txtStatus")
 
-# --- IMPROVED RUN LOGIC ---
-# This now runs directly in the background terminal so you see the text!
-function Run-LiveTask ($msg, $cmd) {
-    $txtStatus.Text = "Status: Running $msg (Check Terminal)..."
+# --- ENGINE STATE ---
+$global:CurrentEngine = "Winget"
+
+function Run-Task ($msg, $wingetCmd, $chocoCmd) {
+    $cmd = if ($global:CurrentEngine -eq "Winget") { $wingetCmd } else { $chocoCmd }
+    $txtStatus.Text = "Status: Running via $($global:CurrentEngine)..."
     Invoke-Expression $cmd
     $txtStatus.Text = "Status: Finished $msg ✅"
 }
 
-# --- MAPPINGS ---
-$btn.btn2.Add_Click({ Run-LiveTask "Chris Titus Utility" "irm https://christitus.com/win | iex" })
-$btn.btn1.Add_Click({ Run-LiveTask "Massgrave" "irm https://get.activated.win | iex" })
-$btn.btn4.Add_Click({ Run-LiveTask "Health Check" "sfc /scannow; DISM /Online /Cleanup-Image /RestoreHealth" })
-$btn.btnNetReset.Add_Click({ Run-LiveTask "Net Reset" "netsh winsock reset; netsh int ip reset; ipconfig /flushdns" })
-$btn.btnNerdFont.Add_Click({ Run-LiveTask "Nerd Font" "winget install --id GitHub.NerdFonts.JetBrainsMono -e" })
-$btn.btn25.Add_Click({ Run-LiveTask "Update All" "winget upgrade --all --include-unknown" })
-$btn.btnTwinkle.Add_Click({ Run-LiveTask "Twinkle Tray" "winget install --id XanderFrangos.TwinkleTray -e" })
+# --- TOGGLE LOGIC ---
+$btn.btnToggleEngine.Add_Click({
+    if ($global:CurrentEngine -eq "Winget") {
+        $global:CurrentEngine = "Choco"
+        $this.Content = "SWITCH TO WINGET 📦"
+        $this.Background = "#7b3f00" # Chocolate Brown
+        $btn.btn25.Background = "#7b3f00"
+        $txtStatus.Text = "Engine: CHOCOLATEY | Ready, Sayan."
+    } else {
+        $global:CurrentEngine = "Winget"
+        $this.Content = "SWITCH TO CHOCOLATEY 🍫"
+        $this.Background = "#005a9e" # Winget Blue
+        $btn.btn25.Background = "#005a9e"
+        $txtStatus.Text = "Engine: WINGET | Ready, Sayan."
+    }
+})
 
-# Add the rest as needed...
-$btn.btn14.Add_Click({ Run-LiveTask "VS Code" "winget install --id Microsoft.VisualStudioCode -e" })
+# --- DUAL-COMMAND MAPPINGS ---
+$btn.btn14.Add_Click({ Run-Task "VS Code" "winget install Microsoft.VisualStudioCode -e" "choco install vscode -y" })
+$btn.btn17.Add_Click({ Run-Task "Node.js" "winget install OpenJS.NodeJS.LTS -e" "choco install nodejs-lts -y" })
+$btn.btn25.Add_Click({ Run-Task "Upgrade All" "winget upgrade --all" "choco upgrade all -y" })
+$btn.btnTwinkle.Add_Click({ Run-Task "Twinkle Tray" "winget install XanderFrangos.TwinkleTray -e" "choco install twinkle-tray -y" })
+$btn.btnNerdFont.Add_Click({ Run-Task "Nerd Font" "winget install GitHub.NerdFonts.JetBrainsMono -e" "choco install jetbrainsmono-nerdfont -y" })
+$btn.btn9.Add_Click({ Run-Task "Everything" "winget install voidtools.Everything -e" "choco install everything -y" })
+$btn.btn13.Add_Click({ Run-Task "AHK" "winget install AutoHotkey.AutoHotkey -e" "choco install autohotkey -y" })
+$btn.btnTailscale.Add_Click({ Run-Task "Tailscale" "winget install Tailscale.Tailscale -e" "choco install tailscale -y" })
+$btn.btnRustDesk.Add_Click({ Run-Task "RustDesk" "winget install RustDesk.RustDesk -e" "choco install rustdesk -y" })
+
+# Native/Script Commands (Same for both)
+$btn.btn1.Add_Click({ Invoke-Expression "irm https://get.activated.win | iex" })
+$btn.btn2.Add_Click({ Invoke-Expression "irm https://christitus.com/win | iex" })
+$btn.btn4.Add_Click({ Invoke-Expression "sfc /scannow; DISM /Online /Cleanup-Image /RestoreHealth" })
+$btn.btnNetReset.Add_Click({ Invoke-Expression "netsh winsock reset; netsh int ip reset; ipconfig /flushdns" })
+$btn.btnPingVM.Add_Click({ Invoke-Expression "ping VMLinux -n 5; pause" })
 
 $Form.ShowDialog() | Out-Null
